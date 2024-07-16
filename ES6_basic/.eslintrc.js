@@ -3,6 +3,7 @@ module.exports = {
       browser: false,
       es6: true,
       jest: true,
+      node: true,
     },
     extends: [
       'airbnb-base',
@@ -11,6 +12,7 @@ module.exports = {
     globals: {
       Atomics: 'readonly',
       SharedArrayBuffer: 'readonly',
+      module: 'readonly',
     },
     parserOptions: {
       ecmaVersion: 2018,
@@ -29,7 +31,6 @@ module.exports = {
     overrides:[
       {
         files: ['*.js'],
-        excludedFiles: 'babel.config.js',
       }
     ]
   };
