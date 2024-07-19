@@ -1,8 +1,14 @@
+import { type } from "os";
+
 class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = name;
-    this._length = length;
-    this._students = students;
+    this._name = '';
+    this._length = 0;
+    this._students = [];
+
+    this.name = name;
+    this.length = length;
+    this.students = students;
   }
   // Getter for name
   get name(){
@@ -10,7 +16,9 @@ class HolbertonCourse {
   }
   // Setter for name
   set name(value){
-    this._name;
+    if (typeof value === 'string') {
+      this._name = value;
+    }
   }
   // Getter for length
   get length(){
@@ -18,7 +26,9 @@ class HolbertonCourse {
   }
   // Setter for length
   set length(value){
-    this._length = value;
+    if(typeof value === 'number'){
+      this._length = value;
+    }
   }
   // Getter for students
   get students(){
@@ -26,7 +36,9 @@ class HolbertonCourse {
   }
   // Setter for students
   set students(value){
-    this._students
+    if(Array.isArray(value) && value.every(item => typeof item === 'string')){
+    this._students = value;
+    }
   }
 }
 export default HolbertonCourse;
