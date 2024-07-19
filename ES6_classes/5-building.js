@@ -8,7 +8,7 @@ export default class Building {
 
   // getter of the sqft
   get sqft() {
-    return this._sqft
+    return this._sqft;
   }
 
   // setter of the sqft
