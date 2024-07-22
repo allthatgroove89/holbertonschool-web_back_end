@@ -1,0 +1,27 @@
+{
+
+"workbench.settings.applyToAllProfiles": [
+  "editor.fontSize"
+],
+"c-cpp-compile-run.run-in-external-terminal": true,
+"editor.experimentalWhitespaceRendering": "font",
+"editor.mouseWheelZoom": true,
+"files.trimTrailingWhitespace": true,
+"code-runner.runInTerminal": true,
+"debug.onTaskErrors": "abort",
+"code-runner.executorMap": {
+    "javascript": "node",
+    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "zig": "zig run"
+},
+"eslint.enable": true,
+"eslint.run": "onSave",
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": "explicit"
+},
+  "json.schemas": [
+
+  ]
+
+}
