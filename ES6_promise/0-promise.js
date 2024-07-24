@@ -1,4 +1,4 @@
-export default function getResponseFromApi(success) {
+export default function getResponseFromApi(success = true) {
   return new Promise((resolve, reject) => {
     if (success) {
       resolve({
