@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-
+This module provides a function to measure the runtime of an asynchronous coroutine.
 """
 import time
 import asyncio
