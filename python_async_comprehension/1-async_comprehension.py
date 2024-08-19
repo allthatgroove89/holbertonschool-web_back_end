@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
-
-
 """
 Module demonstrating asynchronous comprehensions.
 """
 
 
-import asyncio
-import random
 from typing import List
 from async_generator import async_generator
 
