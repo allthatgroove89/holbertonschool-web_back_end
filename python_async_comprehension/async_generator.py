@@ -8,6 +8,7 @@ import random
 import asyncio
 from typing import AsyncGenerator
 
+
 async def async_generator() -> AsyncGenerator[10, None, None]:
     """
     Asynchronously generates 10 random numbers
