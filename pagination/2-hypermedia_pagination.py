@@ -87,7 +87,7 @@ class Server:
         prev_page = page - 1 if page > total_pages else None
 
         return {
-            "page_size": len(dataset),
+            "page_size": len(data),
             "page": page,
             "data": data,
             "next_page": next_page,
