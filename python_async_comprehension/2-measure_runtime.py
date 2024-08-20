@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-
-
 """
 Module to measure the runtime of executing
 multiple asynchronous comprehensions concurrently.
