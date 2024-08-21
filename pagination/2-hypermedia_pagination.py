@@ -3,7 +3,7 @@
 Helper function for pagination.
 """
 
-
+import math
 import csv
 from typing import List, Dict, Any
 
@@ -81,7 +81,7 @@ class Server:
         """
         data = self.get_page(page, page_size)
         dataset = self.dataset()
-        total_pages = (len(dataset) + page_size - 1) // page_size
+        total_pages = math.ceil(len(self.dataset()) / page_size)
         next_page = page + 1 if page <= total_pages else None
         prev_page = page - 1 if page > total_pages else None
 
