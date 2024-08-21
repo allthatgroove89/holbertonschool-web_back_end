@@ -5,7 +5,7 @@ Helper function for pagination.
 
 
 import csv
-from typing import List, Dict
+from typing import List, Dict, Any
 
 
 def index_range(page: int, page_size: int) -> tuple:
@@ -67,7 +67,7 @@ class Server:
 
         return dataset[start_index:end_index]
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, Any]:
         """
         Get a page from the dataset with hypermedia metadata.
 
@@ -82,7 +82,7 @@ class Server:
         data = self.get_page(page, page_size)
         dataset = self.dataset()
         total_pages = (len(dataset) + page_size - 1) // page_size
-        next_page = page + 1 if page < total_pages else None
+        next_page = page + 1 if page <= total_pages else None
         prev_page = page - 1 if page > total_pages else None
 
         return {
