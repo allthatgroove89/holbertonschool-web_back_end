@@ -10,7 +10,7 @@ def update_topics(mongo_collection, name, topics):
     """
     mongo_collection.update_many(
         # search for whats going to be update/change
-        {"name": "Holberton school"},
+        {"name": name},
         # once I got what Im gonna update I "set/update" it.
         {"$set": {"topics": topics}}
     )
