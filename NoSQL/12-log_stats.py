@@ -5,6 +5,7 @@ stored in MongoDB
 """
 
 
+import os
 from pymongo import MongoClient
 
 
@@ -15,10 +16,10 @@ def log_stats():
     # Total number of logs
     total_logs = collection.count_documents({})
     # Count for each HTTP method
-    method = ["GET", "POST", "PUT", "PATCH", "DELETE"]
+    methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
     method_count = {
         method: collection.count_documents(
-            {"method": method}) for method in method
+            {"method": method}) for method in methods
         }
     # Count for GET method with path /status
     status_check = collection.count_documents(
@@ -26,10 +27,11 @@ def log_stats():
     # Print the results
     print(f"{total_logs} logs")
     print("Methods:")
-    for method in method:
+    for method in methods:
         print(f"\tmethod {method}: {method_count[method]}")
     print(f"{status_check} status check")
 
 
 if __name__ == "__main__":
+
     log_stats()
