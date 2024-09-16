@@ -5,8 +5,7 @@ module.exports = {
       jest: true,
     },
     extends: [
-      'eslint:recommended',
-      'plugin:jest/recommended',
+      ['airbnb-base'],
     ],
     globals: {
       Atomics: 'readonly',
@@ -18,7 +17,7 @@ module.exports = {
     },
     plugins: ['jest'],
     rules: {
-      'prefer-regex-literals': 'error',
+      'prefer-regex-literals': 'off',
       'max-classes-per-file': 'off',
       'no-underscore-dangle': 'off',
       'no-console': 'off',

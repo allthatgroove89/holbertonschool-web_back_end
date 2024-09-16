@@ -10,13 +10,13 @@ const read = readline.createInterface({
 // Display a welcome message an prompt the user for their name
 read.question('Welcome to Holberton School, what is your name?\n', (name) =>{
     // Display the user's name
-    console.log(`Your name is: ${name}`);
+    console.log(`Your name is: ${name}\r`);
     // Close the readline interface
     read.close();
 });
 
 // Handles the close event to display the closing message
 read.on('close', () => {
-    console.log('This important software is now closing');
+    console.log('This important software is now closing\r');
     process.exit(0);
 });
