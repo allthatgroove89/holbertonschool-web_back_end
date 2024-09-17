@@ -4,16 +4,3 @@
 3-main_1.js
 3-main_0.js
 0-console.test.js
-
-# Ignore specific JavaScript files
-jest.config.js
-eslint.config.mjs
-
-# Ignore specific JavaScript files
-package-lock.json
-
-# Ignore ESLint configuration files
-.eslintrc.json
-
-# Ignore ESLint configuration files
-node_modules
