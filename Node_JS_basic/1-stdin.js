@@ -12,7 +12,7 @@ function askName() {
     });
 
     rl.on('line', (input) => {
-        process.stdout.write(`Your name is: ${input}\n`);
+        process.stdout.write(`Your name is: ${input}\r`);
         rl.close();
     });
 
