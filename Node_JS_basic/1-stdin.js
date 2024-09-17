@@ -3,8 +3,8 @@ const readline = require('readline');
 
 // Create an interface for reading input from stdin and writing output to stdout
 const read = readline.createInterface({
-    input: process.stdin,
-    output:process.stdout
+    input: require('fs').createReadStream('/dev/stdin'),
+    output: require('fs').createWriteStream('/dev/stdout')
 });
 
 // Display a welcome message an prompt the user for their name
@@ -18,5 +18,4 @@ read.question('Welcome to Holberton School, what is your name?\n', (name) =>{
 // Handles the close event to display the closing message
 read.on('close', () => {
     console.log('This important software is now closing\r');
-    process.exit(0);
 });
