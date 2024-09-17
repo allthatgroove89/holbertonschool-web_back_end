@@ -1,28 +1,13 @@
-/* global process */
+console.log('Welcome to Holberton School, what is your name?');
 
-const readline = require('readline');
+process.stdin.setEncoding('utf8');
+process.stdin.on('readable', () => {
+    const input = process.stdin.read();
+    if (input !== null) {
+      process.stdout.write(`Your name is: ${input}`);
+    }
+});
 
-// Function to handle input, wrapped in a function for testability
-function askName() {
-    process.stdout.write('Welcome to Holberton School, what is your name?\n');
-
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-    });
-
-    rl.on('line', (input) => {
-        process.stdout.write(`Your name is: ${input}\r`);
-        rl.close();
-    });
-
-    rl.on('close', () => {
-        process.stdout.write('This important software is now closing\n');
-    });
-}
-
-if (require.main === module) {
-    askName();
-}
-
-module.exports = askName;
+process.stdin.on('end', () => {
+    console.log('This important software is now closing');
+});

@@ -1,5 +1,5 @@
-const displayMessage = (message) => {
-    // Print the argument to STDOUT
+function displayMessage(message) {
+    // Print the message to STDOUT
     console.log(message);
 };
 
