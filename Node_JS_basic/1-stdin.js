@@ -1,3 +1,5 @@
+/* global process */
+
 const readline = require('readline');
 
 // Function to handle input, wrapped in a function for testability
