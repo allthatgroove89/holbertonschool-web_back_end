@@ -14,7 +14,6 @@ package-lock.json
 
 # Ignore ESLint configuration files
 .eslintrc.json
-.eslintrc.js
 
 # Ignore ESLint configuration files
 node_modules
