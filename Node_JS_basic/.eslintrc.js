@@ -27,6 +27,6 @@ module.exports = {
       'LabeledStatement',
       'WithStatement',
     ],
-    'prefer-regex-literals': 'error',
+    'prefer-regex-literals': 'off',
   },
 };

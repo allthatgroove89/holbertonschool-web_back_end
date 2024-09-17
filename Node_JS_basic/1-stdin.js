@@ -1,21 +1,26 @@
-// Import the readline module to handle input and output
 const readline = require('readline');
 
-// Create an interface for reading input from stdin and writing output to stdout
-const read = readline.createInterface({
-    input: require('fs').createReadStream('/dev/stdin'),
-    output: require('fs').createWriteStream('/dev/stdout')
-});
+// Function to handle input, wrapped in a function for testability
+function askName() {
+    console.log('Welcome to Holberton School, what is your name?');
 
-// Display a welcome message an prompt the user for their name
-read.question('Welcome to Holberton School, what is your name?\n', (name) =>{
-    // Display the user's name
-    console.log(`Your name is: ${name}\r`);
-    // Close the readline interface
-    read.close();
-});
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
 
-// Handles the close event to display the closing message
-read.on('close', () => {
-    console.log('This important software is now closing\r');
-});
+    rl.on('line', (input) => {
+        console.log(`Your name is: ${input}`);
+        rl.close();
+    });
+
+    rl.on('close', () => {
+        console.log('This important software is now closing');
+    });
+}
+
+if (require.main === module) {
+    askName();
+}
+
+module.exports = askName;
