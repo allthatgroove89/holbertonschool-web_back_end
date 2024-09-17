@@ -1,6 +1,7 @@
+
 module.exports = {
   env: {
-    node: true, // Ensures `process` is defined
+    browser: false,
     es6: true,
     jest: true,
   },
@@ -27,6 +28,11 @@ module.exports = {
       'LabeledStatement',
       'WithStatement',
     ],
-    'prefer-regex-literals': 'off',
   },
+  overrides:[
+    {
+      files: ['*.js'],
+      excludedFiles: 'babel.config.js',
+    }
+  ]
 };
