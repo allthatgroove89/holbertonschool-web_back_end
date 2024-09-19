@@ -7,7 +7,7 @@
         "lint": "eslint .",
         "check-lint": "lint [0-9]*.js",
         "test": "./node_modules/mocha/bin/mocha.js --require @babel/register --exit",
-        "dev": "nodemon --exec babel-node --presets babel-preset-env ./server.js ./database.csv"
+        "dev": "nodemon --exec babel-node --presets @babel/preset-env ./server.js ./database.csv"
     },
     "author": "",
     "license": "ISC",
@@ -28,6 +28,6 @@
         "mocha": "^10.7.3",
         "nodemon": "^3.1.5",
         "prettier": "^3.0.0-alpha.6",
-        "sinon": "^7.5.0"
+        "sinon": "^16.1.1"
     }
 }
