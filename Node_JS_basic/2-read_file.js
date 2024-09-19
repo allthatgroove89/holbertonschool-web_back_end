@@ -1,8 +1,9 @@
 const fs = require('fs');
 
 function countStudents(path) {
-  let content;
 
+  let content;
+  
   try {
     content = fs.readFileSync(path, 'utf8');
   } catch (err) {
