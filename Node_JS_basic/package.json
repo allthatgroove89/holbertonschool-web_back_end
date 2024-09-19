@@ -6,12 +6,13 @@
     "scripts": {
         "lint": "eslint .",
         "check-lint": "lint [0-9]*.js",
-        "test": "./node_modules/mocha/bin/mocha.js --require @babel/register --exit",
+        "test": "./node_modules/mocha/bin/mocha --require @babel/register --exit",
         "dev": "nodemon --exec babel-node --presets @babel/preset-env ./server.js ./database.csv"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@babel/register": "^7.24.6",
         "axios": "^1.7.7",
         "chai-http": "^4.3.0",
         "express": "^4.21.0"
