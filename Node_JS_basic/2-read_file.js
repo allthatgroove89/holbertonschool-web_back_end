@@ -1,9 +1,8 @@
 const fs = require('fs');
 
 function countStudents(path) {
-
   let content;
-  
+
   try {
     content = fs.readFileSync(path, 'utf8');
   } catch (err) {
@@ -20,11 +19,14 @@ function countStudents(path) {
   console.log(`Number of students: ${NUMBER_OF_STUDENTS}`);
 
   const fields = {};
-  for (let i = 1; i < students.length; i++) {
-    const field = students[i][3];
-    if (!fields[field]) fields[field] = [];
-    fields[field].push(students[i][0]);
+  for (const i in students) {
+    if (i !== 0) {
+      if (!fields[students[i][3]]) fields[students[i][3]] = [];
+      fields[students[i][3]].push(students[i][0]);
     }
+  }
+
+  delete fields.field;
 
   for (const key of Object.keys(fields)) {
     console.log(
