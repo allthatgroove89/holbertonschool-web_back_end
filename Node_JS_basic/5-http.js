@@ -18,7 +18,7 @@ function countStudents(file) {
         const sweStudents = [];
 
         fields.forEach((line) => {
-          const [firstName, field] = line.split('', ');
+          const [firstName, field] = line.split(', ');
           if (field === 'CS') {
             csStudents.push(firstName);
           } else if (field === 'SWE') {
